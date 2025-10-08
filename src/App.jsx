@@ -29,8 +29,8 @@ const App = () => {
                         <a href="#education" onClick={toggleMenu} className="text-white hover:text-teal-300 text-lg font-medium p-2 rounded-md transition-colors duration-200">Education</a>
                         <a href="#projects" onClick={toggleMenu} className="text-white hover:text-teal-300 text-lg font-medium p-2 rounded-md transition-colors duration-200">Projects</a>
                         <a href="#skills" onClick={toggleMenu} className="text-white hover:text-teal-300 text-lg font-medium p-2 rounded-md transition-colors duration-200">Skills</a>
-                        <a href="https://github.com/your-github-username" target="_blank" rel="noopener noreferrer" onClick={toggleMenu} className="text-white hover:text-teal-300 text-lg font-medium p-2 rounded-md transition-colors duration-200">GitHub</a>
-                        <a href="https://linkedin.com/in/your-linkedin-username" target="_blank" rel="noopener noreferrer" onClick={toggleMenu} className="text-white hover:text-teal-300 text-lg font-medium p-2 rounded-md transition-colors duration-200">LinkedIn</a>
+                        <a href="https://github.com/hemantbhujang" target="_blank" rel="noopener noreferrer" onClick={toggleMenu} className="text-white hover:text-teal-300 text-lg font-medium p-2 rounded-md transition-colors duration-200">GitHub</a>
+                        <a href="https://linkedin.com/in/hemantbhujang" target="_blank" rel="noopener noreferrer" onClick={toggleMenu} className="text-white hover:text-teal-300 text-lg font-medium p-2 rounded-md transition-colors duration-200">LinkedIn</a>
                     </nav>
                 </div>
             )}

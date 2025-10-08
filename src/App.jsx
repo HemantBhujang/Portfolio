@@ -1,13 +1,13 @@
 // src/App.js
 import React, { useState } from 'react';
-import Header from './Components/Header'; // Assuming this is your Navbar component
-import Hero from './components/Hero'; // We'll add this
+import Header from './components/Header'; 
+import Hero from './components/Hero'; 
 import Experience from './components/Experience';
 import Education from './components/Education';
 import Projects from './components/Projects';
 import Skills from './components/Skills';
-import Contact from './components/Contact'; // Let's add a contact section too
-import Footer from './components/Footer'; // Let's make a separate Footer component
+import Contact from './components/Contact'; 
+import Footer from './components/Footer'; 
 
 const App = () => {
     const [isOpen, setIsOpen] = useState(false);

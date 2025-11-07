@@ -13,7 +13,7 @@ const Projects = () => {
       id: 2,
       title: 'Hardware Inventory Management System',
       description: 'Developed a full-stack inventory management system for efficient tracking and management of hardware resources.',
-      link: 'https://github.com/your-github-username/hardware-inventory', 
+      link: '#', 
       technologies: ['PHP', 'CSS', 'XAMPP']
     },
     {

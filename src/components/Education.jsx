@@ -1,46 +1,71 @@
 import React from 'react';
-
-const educationData = [
-  {
-    id: 1,
-    degree: 'Master of Technology (M.Tech), Computer Science & Engineering',
-    institution: 'Government College Of Engineering, Aurangabad',
-    years: '2025 - 2027',
-  },
-  {
-    id: 2,
-    degree: 'Bachelor of Technology (B.Tech), Computer Science & Engineering',
-    institution: 'Deogiri Institute Of Engineering And Management Studies',
-    years: '2021 - 2025',
-  },
-];
+import { educationData } from '../data/portfolioData';
+import { FaGraduationCap, FaCalendarAlt, FaUniversity, FaAward } from 'react-icons/fa';
 
 const Education = () => {
   return (
-    <section id="education" className="py-16 bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-white">
-      <div className="container mx-auto px-6">
-        <h2 className="text-4xl font-extrabold text-center mb-12 text-indigo-600 dark:text-indigo-400">
-          Education
-        </h2>
+    <section id="education" className="py-24 bg-gray-950 text-white relative overflow-hidden transition-colors duration-300">
+      {/* Background Orbs */}
+      <div className="absolute top-10 left-10 w-72 h-72 bg-indigo-600/10 rounded-full blur-[120px] pointer-events-none"></div>
 
-        <div className="space-y-8 max-w-2xl mx-auto">
+      <div className="container mx-auto px-6 relative z-10">
+        
+        {/* Title */}
+        <div className="text-center mb-16">
+          <span className="inline-flex items-center gap-1.5 text-xs font-bold tracking-widest uppercase bg-indigo-500/10 text-indigo-300 px-4 py-1.5 rounded-full border border-indigo-500/30 mb-3 shadow-sm">
+            <FaGraduationCap className="text-indigo-400 text-xs" /> Academic Qualification
+          </span>
+          <h2 className="text-4xl md:text-5xl font-black mt-2 text-white tracking-tight">
+            Education
+          </h2>
+          <p className="text-gray-300 mt-4 max-w-xl mx-auto text-base md:text-lg">
+            Degrees and engineering education credentials.
+          </p>
+        </div>
+
+        {/* Timeline List */}
+        <div className="space-y-8 max-w-4xl mx-auto">
           {educationData.map((edu) => (
             <div
               key={edu.id}
-              className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 md:p-8 hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-1 border border-transparent hover:border-indigo-500"
+              className="group relative bg-gray-900/80 backdrop-blur-md rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 border border-gray-800 hover:border-indigo-500/50 hover:-translate-y-1.5 shimmer-effect"
             >
-              <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-4">
-                <div>
-                  <h3 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-1">
-                    {edu.degree}
-                  </h3>
-                  <p className="text-md md:text-lg text-indigo-600 dark:text-indigo-400">
-                    {edu.institution}
-                  </p>
+              <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+                <div className="flex items-start space-x-5">
+                  {/* Icon Box */}
+                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-tr from-indigo-600 to-purple-600 text-white flex items-center justify-center text-2xl flex-shrink-0 shadow-lg shadow-indigo-600/30 group-hover:scale-110 transition-transform duration-300">
+                    <FaGraduationCap />
+                  </div>
+
+                  <div>
+                    <h3 className="text-xl md:text-2xl font-bold text-white group-hover:text-indigo-300 transition-colors duration-200">
+                      {edu.degree}
+                    </h3>
+                    <p className="text-base text-indigo-400 font-semibold flex items-center mt-1">
+                      <FaUniversity className="mr-2 text-sm text-indigo-300" />
+                      {edu.institution}
+                    </p>
+                  </div>
                 </div>
-                <span className="text-sm text-gray-500 dark:text-gray-400 font-medium mt-2 md:mt-0 md:text-base">
-                  {edu.years}
-                </span>
+
+                <div className="flex items-center space-x-3 self-start md:self-auto">
+                  {edu.badge && (
+                    <span
+                      className={`text-xs font-bold px-3.5 py-1.5 rounded-full border ${
+                        edu.badge === 'Pursuing'
+                          ? 'bg-blue-500/10 text-blue-300 border-blue-500/30'
+                          : 'bg-emerald-500/10 text-emerald-300 border-emerald-500/30'
+                      }`}
+                    >
+                      <FaAward className="inline mr-1 text-xs" />
+                      {edu.badge}
+                    </span>
+                  )}
+                  <span className="text-xs font-mono text-gray-400 bg-gray-800/80 px-3.5 py-1.5 rounded-xl border border-gray-700/60 flex items-center">
+                    <FaCalendarAlt className="mr-1.5 text-xs text-indigo-400" />
+                    {edu.years}
+                  </span>
+                </div>
               </div>
             </div>
           ))}
